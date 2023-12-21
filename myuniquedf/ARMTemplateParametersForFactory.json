@@ -1,0 +1,89 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "myuniquedf"
+		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"AzureFileLinkedService_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabaseLinkedService_connectionString": {
+			"value": ""
+		},
+		"ControlFlowBlobStorage_connectionString": {
+			"value": ""
+		},
+		"DMBlobLinkedService_connectionString": {
+			"value": ""
+		},
+		"DMSqlLinkedService_connectionString": {
+			"value": ""
+		},
+		"SHIRSQLVM_connectionString": {
+			"value": "Integrated Security=True;Data Source=SQLVM;Initial Catalog=TestDatabase"
+		},
+		"SHIRSQLVM_password": {
+			"value": ""
+		},
+		"AzureBlobStorage1_properties_typeProperties_serviceEndpoint": {
+			"value": "https://myrandomstorageaccount.blob.core.windows.net/"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://mynewazurekeyvault.vault.azure.net/"
+		},
+		"AzureStorageLinkedService_properties_typeProperties_serviceEndpoint": {
+			"value": "https://myrandomstorageaccount.blob.core.windows.net/"
+		},
+		"SHIRSQLVM_properties_typeProperties_userName": {
+			"value": "azureuser"
+		},
+		"AzureBlobStorage120_properties_privateLinkResourceId": {
+			"value": "/subscriptions/ce06daf5-2daf-4311-b15d-e6f3207a993d/resourceGroups/mydfresourcegroup/providers/Microsoft.Storage/storageAccounts/myrandomstorageaccount"
+		},
+		"AzureBlobStorage120_properties_groupId": {
+			"value": "blob"
+		},
+		"AzureBlobStorage120_properties_fqdns": {
+			"value": [
+				"myrandomstorageaccount.blob.core.windows.net"
+			]
+		},
+		"AzureKeyVault592_properties_privateLinkResourceId": {
+			"value": "/subscriptions/ce06daf5-2daf-4311-b15d-e6f3207a993d/resourceGroups/mydfresourcegroup/providers/Microsoft.KeyVault/vaults/mynewazurekeyvault"
+		},
+		"AzureKeyVault592_properties_groupId": {
+			"value": "vault"
+		},
+		"AzureKeyVault592_properties_fqdns": {
+			"value": [
+				"mynewazurekeyvault.vault.azure.net"
+			]
+		},
+		"AzureKeyVault718_properties_privateLinkResourceId": {
+			"value": "/subscriptions/ce06daf5-2daf-4311-b15d-e6f3207a993d/resourceGroups/mydfresourcegroup/providers/Microsoft.KeyVault/vaults/adftutkeyvault"
+		},
+		"AzureKeyVault718_properties_groupId": {
+			"value": "vault"
+		},
+		"AzureKeyVault718_properties_fqdns": {
+			"value": [
+				"adftutkeyvault.vault.azure.net"
+			]
+		},
+		"AzureSynapseAnalytics142_properties_privateLinkResourceId": {
+			"value": "/subscriptions/ce06daf5-2daf-4311-b15d-e6f3207a993d/resourceGroups/mydfresourcegroup/providers/Microsoft.Sql/servers/mysqlserver324"
+		},
+		"AzureSynapseAnalytics142_properties_groupId": {
+			"value": "sqlServer"
+		},
+		"AzureSynapseAnalytics142_properties_fqdns": {
+			"value": [
+				"mysqlserver324.database.windows.net"
+			]
+		}
+	}
+}

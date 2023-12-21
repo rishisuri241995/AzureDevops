@@ -1,0 +1,239 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "myuniquedf"
+		},
+		"AzureBlobStorage2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
+		},
+		"AzureFileLinkedService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureFileLinkedService'"
+		},
+		"AzureSqlDatabaseLinkedService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabaseLinkedService'"
+		},
+		"ControlFlowBlobStorage_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ControlFlowBlobStorage'"
+		},
+		"DMBlobLinkedService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'DMBlobLinkedService'"
+		},
+		"DMSqlLinkedService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'DMSqlLinkedService'"
+		},
+		"SHIRSQLVM_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SHIRSQLVM'",
+			"defaultValue": "Integrated Security=True;Data Source=SQLVM;Initial Catalog=TestDatabase"
+		},
+		"SHIRSQLVM_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SHIRSQLVM'"
+		},
+		"AzureBlobStorage1_properties_typeProperties_serviceEndpoint": {
+			"type": "string",
+			"defaultValue": "https://myrandomstorageaccount.blob.core.windows.net/"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://mynewazurekeyvault.vault.azure.net/"
+		},
+		"AzureStorageLinkedService_properties_typeProperties_serviceEndpoint": {
+			"type": "string",
+			"defaultValue": "https://myrandomstorageaccount.blob.core.windows.net/"
+		},
+		"SHIRSQLVM_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "azureuser"
+		},
+		"AzureBlobStorage120_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/ce06daf5-2daf-4311-b15d-e6f3207a993d/resourceGroups/mydfresourcegroup/providers/Microsoft.Storage/storageAccounts/myrandomstorageaccount"
+		},
+		"AzureBlobStorage120_properties_groupId": {
+			"type": "string",
+			"defaultValue": "blob"
+		},
+		"AzureBlobStorage120_properties_fqdns": {
+			"type": "array",
+			"defaultValue": [
+				"myrandomstorageaccount.blob.core.windows.net"
+			]
+		},
+		"AzureKeyVault592_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/ce06daf5-2daf-4311-b15d-e6f3207a993d/resourceGroups/mydfresourcegroup/providers/Microsoft.KeyVault/vaults/mynewazurekeyvault"
+		},
+		"AzureKeyVault592_properties_groupId": {
+			"type": "string",
+			"defaultValue": "vault"
+		},
+		"AzureKeyVault592_properties_fqdns": {
+			"type": "array",
+			"defaultValue": [
+				"mynewazurekeyvault.vault.azure.net"
+			]
+		},
+		"AzureKeyVault718_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/ce06daf5-2daf-4311-b15d-e6f3207a993d/resourceGroups/mydfresourcegroup/providers/Microsoft.KeyVault/vaults/adftutkeyvault"
+		},
+		"AzureKeyVault718_properties_groupId": {
+			"type": "string",
+			"defaultValue": "vault"
+		},
+		"AzureKeyVault718_properties_fqdns": {
+			"type": "array",
+			"defaultValue": [
+				"adftutkeyvault.vault.azure.net"
+			]
+		},
+		"AzureSynapseAnalytics142_properties_privateLinkResourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/ce06daf5-2daf-4311-b15d-e6f3207a993d/resourceGroups/mydfresourcegroup/providers/Microsoft.Sql/servers/mysqlserver324"
+		},
+		"AzureSynapseAnalytics142_properties_groupId": {
+			"type": "string",
+			"defaultValue": "sqlServer"
+		},
+		"AzureSynapseAnalytics142_properties_fqdns": {
+			"type": "array",
+			"defaultValue": [
+				"mysqlserver324.database.windows.net"
+			]
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "myuniquedf_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage2_connectionString": {
+						"value": "[parameters('AzureBlobStorage2_connectionString')]"
+					},
+					"AzureFileLinkedService_connectionString": {
+						"value": "[parameters('AzureFileLinkedService_connectionString')]"
+					},
+					"AzureSqlDatabaseLinkedService_connectionString": {
+						"value": "[parameters('AzureSqlDatabaseLinkedService_connectionString')]"
+					},
+					"ControlFlowBlobStorage_connectionString": {
+						"value": "[parameters('ControlFlowBlobStorage_connectionString')]"
+					},
+					"DMBlobLinkedService_connectionString": {
+						"value": "[parameters('DMBlobLinkedService_connectionString')]"
+					},
+					"DMSqlLinkedService_connectionString": {
+						"value": "[parameters('DMSqlLinkedService_connectionString')]"
+					},
+					"AzureBlobStorage1_properties_typeProperties_serviceEndpoint": {
+						"value": "[parameters('AzureBlobStorage1_properties_typeProperties_serviceEndpoint')]"
+					},
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					},
+					"AzureStorageLinkedService_properties_typeProperties_serviceEndpoint": {
+						"value": "[parameters('AzureStorageLinkedService_properties_typeProperties_serviceEndpoint')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "myuniquedf_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"SHIRSQLVM_connectionString": {
+						"value": "[parameters('SHIRSQLVM_connectionString')]"
+					},
+					"SHIRSQLVM_password": {
+						"value": "[parameters('SHIRSQLVM_password')]"
+					},
+					"SHIRSQLVM_properties_typeProperties_userName": {
+						"value": "[parameters('SHIRSQLVM_properties_typeProperties_userName')]"
+					},
+					"AzureBlobStorage120_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureBlobStorage120_properties_privateLinkResourceId')]"
+					},
+					"AzureBlobStorage120_properties_groupId": {
+						"value": "[parameters('AzureBlobStorage120_properties_groupId')]"
+					},
+					"AzureBlobStorage120_properties_fqdns": {
+						"value": "[parameters('AzureBlobStorage120_properties_fqdns')]"
+					},
+					"AzureKeyVault592_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureKeyVault592_properties_privateLinkResourceId')]"
+					},
+					"AzureKeyVault592_properties_groupId": {
+						"value": "[parameters('AzureKeyVault592_properties_groupId')]"
+					},
+					"AzureKeyVault592_properties_fqdns": {
+						"value": "[parameters('AzureKeyVault592_properties_fqdns')]"
+					},
+					"AzureKeyVault718_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureKeyVault718_properties_privateLinkResourceId')]"
+					},
+					"AzureKeyVault718_properties_groupId": {
+						"value": "[parameters('AzureKeyVault718_properties_groupId')]"
+					},
+					"AzureKeyVault718_properties_fqdns": {
+						"value": "[parameters('AzureKeyVault718_properties_fqdns')]"
+					},
+					"AzureSynapseAnalytics142_properties_privateLinkResourceId": {
+						"value": "[parameters('AzureSynapseAnalytics142_properties_privateLinkResourceId')]"
+					},
+					"AzureSynapseAnalytics142_properties_groupId": {
+						"value": "[parameters('AzureSynapseAnalytics142_properties_groupId')]"
+					},
+					"AzureSynapseAnalytics142_properties_fqdns": {
+						"value": "[parameters('AzureSynapseAnalytics142_properties_fqdns')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'myuniquedf_ArmTemplate_0')]"
+			]
+		}
+	]
+}
