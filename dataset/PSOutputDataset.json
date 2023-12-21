@@ -1,0 +1,19 @@
+{
+	"name": "PSOutputDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureFileLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "DatasetLocation",
+				"container": "adftutorial",
+				"folderPath": "output"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

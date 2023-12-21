@@ -1,0 +1,10 @@
+{
+	"name": "AzureKeyVault592",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/ce06daf5-2daf-4311-b15d-e6f3207a993d/resourceGroups/mydfresourcegroup/providers/Microsoft.KeyVault/vaults/mynewazurekeyvault",
+		"groupId": "vault",
+		"fqdns": [
+			"mynewazurekeyvault.vault.azure.net"
+		]
+	}
+}

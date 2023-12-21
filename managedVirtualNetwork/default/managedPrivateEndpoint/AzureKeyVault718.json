@@ -1,0 +1,10 @@
+{
+	"name": "AzureKeyVault718",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/ce06daf5-2daf-4311-b15d-e6f3207a993d/resourceGroups/mydfresourcegroup/providers/Microsoft.KeyVault/vaults/adftutkeyvault",
+		"groupId": "vault",
+		"fqdns": [
+			"adftutkeyvault.vault.azure.net"
+		]
+	}
+}
