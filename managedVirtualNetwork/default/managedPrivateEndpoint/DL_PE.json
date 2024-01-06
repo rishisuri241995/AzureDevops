@@ -1,0 +1,7 @@
+{
+	"name": "DL_PE",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/ce06daf5-2daf-4311-b15d-e6f3207a993d/resourceGroups/cloud-shell-storage-eastus/providers/Microsoft.Storage/storageAccounts/myprivatestoreaccount",
+		"groupId": "dfs"
+	}
+}
